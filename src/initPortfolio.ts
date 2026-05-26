@@ -692,7 +692,7 @@ export function initPortfolio(): void {
 
     }
 
-    let currentViewerState = { type: 'image', src: '/assets/images/site-150.png', title: 'Select an asset to preview' };
+    let currentViewerState = { type: 'image', src: '/assets/images/site-169.jpg', title: 'Select an asset to preview' };
 
     function openMultimodal(type, src, title) {
 
