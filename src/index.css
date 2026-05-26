@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700;9..40,900&family=Space+Mono:wght@400;700&display=swap");
+@import "tailwindcss";
+
+:root {
+  --bg: #0b1120;
+  --bg-alt: #151e32;
+  --panel: rgba(255, 255, 255, 0.045);
+  --panel-strong: rgba(255, 255, 255, 0.08);
+  --text: #f8fafc;
+  --muted: #cbd5e1;
+  --soft: #94a3b8;
+  --border: rgba(255, 255, 255, 0.1);
+  --accent: #ff5a1f;
+  --accent-soft: rgba(255, 90, 31, 0.18);
+  --brand: #38bdf8;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: "DM Sans", sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(56, 189, 248, 0.1), transparent 26%),
+    radial-gradient(circle at top right, rgba(255, 90, 31, 0.12), transparent 22%),
+    linear-gradient(180deg, #0b1120 0%, #111a2c 45%, #0a101d 100%);
+  color: var(--text);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.18;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 34px 34px;
+  mask-image: radial-gradient(circle at center, black 35%, transparent 95%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+*::selection {
+  background: rgba(255, 90, 31, 0.25);
+  color: white;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+img {
+  max-width: 100%;
+}
