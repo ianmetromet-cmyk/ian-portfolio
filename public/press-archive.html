@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Full press archive — earned media coverage across labor, advocacy, and public-interest campaigns by Ian Mark Newman."
+    />
+    <title>Press Archive | Ian Mark Newman</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #0b1120;
+        --bg-alt: #151e32;
+        --text: #f8fafc;
+        --accent: #ff4500;
+        --brand-blue: #38bdf8;
+        --grey: #9ca3af;
+        --grey-light: #d1d5db;
+        --border: rgba(255, 255, 255, 0.1);
+        --mono: "Space Mono", monospace;
+        --body: "DM Sans", sans-serif;
+        --page-gutter: clamp(1.25rem, 4vw, 3rem);
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--body);
+        line-height: 1.6;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .archive-nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 1rem var(--page-gutter);
+        border-bottom: 1px solid var(--border);
+        background: rgba(11, 17, 32, 0.92);
+        backdrop-filter: blur(10px);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+      }
+
+      .archive-nav__logo {
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        letter-spacing: 0.14em;
+        text-decoration: none;
+        color: var(--text);
+      }
+
+      .archive-nav__actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.65rem;
+        align-items: center;
+      }
+
+      .archive-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.35rem;
+        padding: 0.65rem 1rem;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.03);
+        color: var(--grey-light);
+        font-family: var(--mono);
+        font-size: 0.68rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+      }
+
+      .archive-btn:hover {
+        border-color: rgba(56, 189, 248, 0.45);
+        color: var(--text);
+      }
+
+      .archive-btn--primary {
+        border-color: rgba(255, 69, 0, 0.45);
+        background: rgba(255, 69, 0, 0.12);
+        color: var(--text);
+      }
+
+      .archive-btn--primary:hover {
+        border-color: rgba(255, 69, 0, 0.7);
+        background: rgba(255, 69, 0, 0.18);
+      }
+
+      .archive-header {
+        padding: clamp(2rem, 5vw, 3.5rem) var(--page-gutter) 1.5rem;
+        max-width: 920px;
+      }
+
+      .archive-header__eyebrow {
+        display: block;
+        margin-bottom: 0.75rem;
+        font-family: var(--mono);
+        font-size: 0.68rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--accent);
+      }
+
+      .archive-header__title {
+        margin: 0 0 0.85rem;
+        font-size: clamp(1.8rem, 4vw, 2.8rem);
+        line-height: 1.15;
+        font-weight: 800;
+      }
+
+      .archive-header__lead {
+        margin: 0;
+        max-width: 62ch;
+        color: var(--grey-light);
+        font-size: 1rem;
+      }
+
+      .archive-viewer {
+        margin: 0 var(--page-gutter) clamp(2rem, 5vw, 3rem);
+        border: 1px solid var(--border);
+        border-radius: 28px;
+        overflow: hidden;
+        background: var(--bg-alt);
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+      }
+
+      .archive-viewer__toolbar {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+        padding: 1rem 1.25rem;
+        border-bottom: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.03);
+      }
+
+      .archive-viewer__label {
+        font-family: var(--mono);
+        font-size: 0.68rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--grey);
+      }
+
+      .archive-frame {
+        display: block;
+        width: 100%;
+        height: min(78vh, 980px);
+        border: 0;
+        background: #0f172a;
+      }
+
+      .archive-fallback {
+        padding: 2rem 1.25rem;
+        text-align: center;
+        color: var(--grey-light);
+      }
+
+      .archive-fallback a {
+        color: var(--brand-blue);
+      }
+
+      @media (max-width: 768px) {
+        .archive-frame {
+          display: none;
+        }
+
+        .archive-viewer__toolbar {
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="archive-nav">
+      <a class="archive-nav__logo" href="/">IAN MARK NEWMAN</a>
+      <div class="archive-nav__actions">
+        <a class="archive-btn" href="/#media">← Back to portfolio</a>
+        <a class="archive-btn archive-btn--primary" href="/assets/docs/press-archive.pdf" download="Organized-Media-Clips-SEIU-Labor-Regional-Press-Tracker.pdf">Download PDF</a>
+        <a class="archive-btn" href="/assets/docs/press-archive.pdf" target="_blank" rel="noopener noreferrer">Open in new tab</a>
+      </div>
+    </header>
+
+    <main>
+      <div class="archive-header">
+        <span class="archive-header__eyebrow">Media · Full archive</span>
+        <h1 class="archive-header__title">SEIU Labor Regional Press Tracker</h1>
+        <p class="archive-header__lead">
+          Organized media clips — earned coverage across SEIU labor and regional public-interest campaigns.
+        </p>
+      </div>
+
+      <section class="archive-viewer" aria-label="Press archive document">
+        <div class="archive-viewer__toolbar">
+          <span class="archive-viewer__label">Document preview</span>
+          <a class="archive-btn archive-btn--primary" href="/assets/docs/press-archive.pdf" target="_blank" rel="noopener noreferrer">View full PDF</a>
+        </div>
+        <iframe
+          class="archive-frame"
+          src="/assets/docs/press-archive.pdf"
+          title="SEIU Labor Regional Press Tracker — organized media clips PDF"
+        ></iframe>
+        <div class="archive-fallback">
+          <p>PDF preview works best on desktop. On mobile, use <a href="/assets/docs/press-archive.pdf" target="_blank" rel="noopener noreferrer">Open in new tab</a> or <a href="/assets/docs/press-archive.pdf" download>Download PDF</a>.</p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
